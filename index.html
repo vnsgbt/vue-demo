@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<div id="app">
+
+    <div>
+        <span v-bind:title="message">
+            Hover your mouse over me for a few seconds to see my dynamically bound title!
+        </span>
+    </div>
+
+    <p></p>
+
+    <div>
+        <span v-if="seen">Now you see me</span>
+    </div>
+
+    <div>
+        <ol>
+            <li v-for="todo in todos">
+                {{ todo.text }}
+            </li>
+        </ol>
+    </div>
+
+    <div>
+        <p>{{ message }}</p>
+        <button v-on:click="reverseMessage">Reverse Message</button>
+    </div>
+
+    <p></p>
+
+    <div>
+        <input v-model="message">
+    </div>
+
+    <p></p>
+
+    <todo-item
+      v-for="item in groceryList"
+      v-bind:todo="item"
+      v-bind:key="item.id">
+    </todo-item>
+
+    <p></p>
+
+
+</div>
+
+<script src="./app.js"></script>
+
+</html>
